@@ -1,0 +1,92 @@
+/* Header layout to match Soilux template - works with custom.css */
+
+/* Navbar row: logo | centered nav | Get Started */
+.navbar .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+}
+
+.main-menu {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+/* Center the nav links (Soilux style) */
+.main-menu .nav-menu-wrapper {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+/* Mobile: hide desktop menu by default, show when .menu-open */
+@media only screen and (max-width: 991px) {
+  .main-menu.responsive-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    order: 99;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--dark-divider-color, rgba(255,255,255,0.1));
+  }
+
+  .main-menu.responsive-menu.menu-open {
+    display: flex;
+  }
+
+  .main-menu .nav-menu-wrapper {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .main-menu .nav-menu-wrapper > ul {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .main-menu ul li {
+    margin: 0;
+    border-bottom: 1px solid var(--dark-divider-color, rgba(255,255,255,0.1));
+  }
+
+  .main-menu ul li a {
+    display: block;
+    padding: 12px 0 !important;
+  }
+
+  .main-menu ul ul {
+    position: static;
+    width: 100%;
+    transform: none;
+    box-shadow: none;
+    margin: 0;
+    padding-left: 15px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 0;
+  }
+
+  .main-menu ul li:hover > ul {
+    padding: 0 0 5px 0;
+  }
+
+  .main-menu .header-btn {
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  .main-menu .header-btn a {
+    display: block;
+    text-align: center;
+  }
+}
+
+/* Toggle button - match Soilux .slicknav_btn (already styled in custom.css) */
+.navbar-toggle button.slicknav_btn {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}

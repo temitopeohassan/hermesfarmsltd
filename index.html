@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./hermes.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>:: Hermes Farms Ltd</title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="/css/custom.css" />
+	<link rel="stylesheet" href="/css/header-nav.css" />
+	<link rel="stylesheet" href="/css/footer.css" />
+
+  </head>
+  <body>
+    <div id="app">Loading…</div>
+    <script>
+      window.__appLoadError = function(msg) {
+        var el = document.getElementById("app");
+        if (el) el.innerHTML = "<pre style='padding:20px;font-family:sans-serif;'>" + msg + "</pre>";
+      };
+      window.addEventListener("error", function(e) {
+        if (e.message) window.__appLoadError("Script error: " + e.message + (e.filename ? "\n at " + e.filename + ":" + e.lineno : ""));
+      });
+      window.addEventListener("unhandledrejection", function(e) {
+        window.__appLoadError("Unhandled error: " + (e.reason && (e.reason.message || e.reason)) + (e.reason && e.reason.stack ? "\n\n" + e.reason.stack : ""));
+      });
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
