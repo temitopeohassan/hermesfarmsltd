@@ -30,12 +30,6 @@ export default function Hero() {
                 </div>
               </div>
             </div>
-
-            <div className="col-xl-6">
-              <div className="hero-image">
-                <img src="/images/hero-image.png" alt="Hero" />
-              </div>
-            </div>
           </div>
         </div>
       </div>

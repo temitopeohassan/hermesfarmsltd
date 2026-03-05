@@ -21,23 +21,8 @@ export default function Footer() {
             <div className="footer-social-links">
               <ul>
                 <li>
-                  <a href="#" aria-label="Dribbble">
-                    <i className="fa-brands fa-dribbble" />
-                  </a>
-                </li>
-                <li>
-                  <a href="#" aria-label="Facebook">
-                    <i className="fa-brands fa-facebook-f" />
-                  </a>
-                </li>
-                <li>
                   <a href="#" aria-label="Instagram">
                     <i className="fa-brands fa-instagram" />
-                  </a>
-                </li>
-                <li>
-                  <a href="#" aria-label="LinkedIn">
-                    <i className="fa-brands fa-linkedin-in" />
                   </a>
                 </li>
               </ul>
@@ -56,11 +41,15 @@ export default function Footer() {
                   <li><Link to="/about">About Us</Link></li>
                   <li><Link to="/board">Our People</Link></li>
                   <li><Link to="/produce">Produce</Link></li>
+                  
                 </ul>
               </div>
               <div className="footer-links">
               <h3>           </h3>
                 <ul>
+                  <li>
+                    <Link to="/where-to-buy">Where To Buy</Link>
+                  </li>
                 <li><Link to="/services">Services</Link></li>
                   <li><Link to="/gallery">Gallery</Link></li>
                   <li><Link to="/blog">Blog</Link></li>
@@ -72,11 +61,11 @@ export default function Footer() {
                 <ul>
                   <li>
                     <i className="fa-solid fa-location-dot" />
-                    <span>2118 Thornridge Cir. Syracuse, Connecticut 35624</span>
+                    <span>Olutunji Close, Araromi, Itoki Rd, 100271, Ogun State</span>
                   </li>
                   <li>
                     <i className="fa-solid fa-phone" />
-                    <span>+234 XXX XXX XXXX</span>
+                    <span>+234 703 461 4623</span>
                   </li>
                   <li>
                     <i className="fa-solid fa-envelope" />
