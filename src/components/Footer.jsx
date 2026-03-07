@@ -8,10 +8,7 @@ export default function Footer() {
         <div className="footer-contact-info-box">
           <div className="footer-logo">
             <Link to="/" className="site-brand">
-              <img src="/images/logo.png" alt="Hermes Farms Ltd" />
-              <img src="/hermes.svg" alt="Hermes Farms Ltd" className="site-brand__icon" />
-              <span className="site-brand__name">Hermes Farms</span>
-            </Link>
+              <img src="/images/footer_logo.png" alt="Hermes Farms Ltd" /></Link>
           </div>
           <div className="footer-contact-info">
             <div className="footer-contact-info-content">
