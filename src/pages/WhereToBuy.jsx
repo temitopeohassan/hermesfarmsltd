@@ -1,7 +1,31 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import PageBanner from "../components/PageBanner";
 import Footer from "../components/Footer";
+
+const outlets = [
+  {
+    name: "Lekki Farmers Market",
+    location: "Lagos",
+    type: "Retail Outlet",
+  },
+  {
+    name: "Green Harvest Grocery",
+    location: "Victoria Island",
+    type: "Grocery Partner",
+  },
+  {
+    name: "Fresh Basket Supermarket",
+    location: "Ikeja",
+    type: "Supermarket",
+  },
+  {
+    name: "Direct Farm Supply",
+    location: "Bulk Orders",
+    type: "Wholesale",
+  },
+];
 
 export default function WhereToBuy() {
   return (
@@ -10,33 +34,39 @@ export default function WhereToBuy() {
       <PageBanner title="Where To Buy" />
 
       <main className="main-content">
-        <div className="container" style={{ padding: "80px 0 100px" }}>
-          
-          <h2>Where To Buy Hermes Farms Produce</h2>
+        <section className="where-to-buy-section">
+          <div className="container">
+            <div className="section-title text-center">
+              <h3>Distribution</h3>
+              <h2>Find Hermes Farms produce near you</h2>
+              <p>
+                Our produce is available through selected markets, grocery
+                stores, and trusted partner distributors.
+              </p>
+            </div>
 
-          <p>
-            Hermes Farms produce is available through selected markets,
-            grocery stores, and partner distributors. We work with trusted
-            retailers to ensure our fresh farm products reach customers
-            across our distribution areas.
-          </p>
+            <div className="row">
+              {outlets.map((outlet) => (
+                <div className="col-lg-3 col-md-6" key={outlet.name}>
+                  <div className="where-to-buy-card">
+                    <i className="fa-solid fa-store" />
+                    <h4>{outlet.name}</h4>
+                    <p>{outlet.location}</p>
+                    <span>{outlet.type}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
 
-          <h4 className="mt-4">Available At:</h4>
-
-          <ul className="buy-list">
-            <li>Lekki Farmers Market – Lagos</li>
-            <li>Green Harvest Grocery – Victoria Island</li>
-            <li>Fresh Basket Supermarket – Ikeja</li>
-            <li>Selected farm produce distributors</li>
-            <li>Direct farm orders (contact us for bulk supply)</li>
-          </ul>
-
-          <p className="mt-4">
-            For wholesale purchases or to become a retail partner,
-            please <a href="/contact">contact us</a>.
-          </p>
-
-        </div>
+            <div className="where-to-buy-cta">
+              <p>
+                For wholesale purchases or to become a retail partner, we’d
+                love to hear from you.
+              </p>
+              <Link to="/contact" className="btn-default">Contact Us</Link>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />
