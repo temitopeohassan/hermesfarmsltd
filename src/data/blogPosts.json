@@ -1,0 +1,86 @@
+[
+  {
+    "id": "soil-health-basics",
+    "slug": "improving-soil-health-before-planting-season",
+    "title": "Improving Soil Health Before Planting Season",
+    "excerpt": "Simple pre-season practices that improve fertility, moisture retention, and long-term crop performance.",
+    "category": "Soil Management",
+    "publishedAt": "2026-02-10",
+    "author": "Hermes Farms Agronomy Team",
+    "readTime": "6 min read",
+    "heroIcon": "fa-solid fa-seedling",
+    "content": [
+      "Healthy soil is the foundation of reliable harvests. Before planting, we begin by testing key nutrient indicators so fertilizer plans match actual field conditions instead of assumptions.",
+      "We also add mature organic matter to improve structure and water retention. This helps root development and reduces stress during dry spells.",
+      "Finally, we prepare fields with minimal disruption where possible. Protecting soil biology and reducing compaction supports stronger crop establishment throughout the season."
+    ],
+    "highlights": [
+      "Run soil tests early and map nutrient gaps",
+      "Apply compost or organic inputs before first rains",
+      "Avoid unnecessary tillage to preserve soil structure"
+    ]
+  },
+  {
+    "id": "produce-freshness-system",
+    "slug": "how-we-maintain-freshness-in-produce-distribution",
+    "title": "How We Maintain Freshness in Produce Distribution",
+    "excerpt": "From harvest windows to packaging controls, our process keeps produce fresh through delivery.",
+    "category": "Operations",
+    "publishedAt": "2026-01-25",
+    "author": "Hermes Farms Operations Team",
+    "readTime": "5 min read",
+    "heroIcon": "fa-solid fa-truck-fast",
+    "content": [
+      "Freshness starts in the field. We schedule harvests around maturity windows and temperature conditions, then move produce quickly to sorting and packing points.",
+      "Each batch is graded and packed based on destination. Retail packs and wholesale packs follow different handling and labeling standards to reduce damage and improve shelf life.",
+      "During transportation, we prioritize route efficiency and simple handling rules that protect quality from dispatch to delivery."
+    ],
+    "highlights": [
+      "Harvest timing is aligned with market delivery windows",
+      "Batch grading reduces quality variation for buyers",
+      "Packaging standards are tailored by sales channel"
+    ]
+  },
+  {
+    "id": "organic-buyers-guide",
+    "slug": "organic-farming-what-buyers-should-know",
+    "title": "Organic Farming: What Buyers Should Know",
+    "excerpt": "A practical guide for households and retailers on what to look for in responsibly grown produce.",
+    "category": "Buyer Education",
+    "publishedAt": "2026-01-04",
+    "author": "Hermes Farms Market Desk",
+    "readTime": "4 min read",
+    "heroIcon": "fa-solid fa-leaf",
+    "content": [
+      "For many buyers, 'organic' can feel unclear. A better approach is to focus on how produce is grown, handled, and documented from farm to point of sale.",
+      "Ask suppliers about soil programs, pest management methods, and post-harvest handling. Responsible producers can explain their process in simple, verifiable terms.",
+      "Consistency matters too. Reliable farms provide quality records, clear communication, and dependable supply schedules over time."
+    ],
+    "highlights": [
+      "Look for transparent growing and handling practices",
+      "Ask for quality and supply consistency evidence",
+      "Work with farms that communicate clearly"
+    ]
+  },
+  {
+    "id": "water-efficiency-fields",
+    "slug": "water-efficiency-strategies-for-open-field-farming",
+    "title": "Water Efficiency Strategies for Open Field Farming",
+    "excerpt": "Practical irrigation and field planning methods that reduce water waste while protecting yield.",
+    "category": "Irrigation",
+    "publishedAt": "2025-12-16",
+    "author": "Hermes Farms Field Team",
+    "readTime": "7 min read",
+    "heroIcon": "fa-solid fa-droplet",
+    "content": [
+      "Water planning begins before irrigation starts. Field slope, soil type, and crop stage all influence the best delivery method.",
+      "We use targeted watering schedules and simple monitoring routines to avoid over-irrigation. This reduces disease pressure and protects nutrient balance.",
+      "Where possible, we combine irrigation improvements with mulching and soil cover to reduce surface evaporation and improve moisture stability."
+    ],
+    "highlights": [
+      "Match irrigation method to field and crop stage",
+      "Monitor moisture to avoid over-watering",
+      "Use mulching to preserve soil moisture"
+    ]
+  }
+]

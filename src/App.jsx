@@ -7,6 +7,7 @@ import Produce from "./pages/Produce";
 import Services from "./pages/Services";
 import Gallery from "./pages/Gallery";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import Contact from "./pages/Contact";
 import WhereToBuy from "./pages/WhereToBuy";
 
@@ -20,6 +21,7 @@ function App() {
       <Route path="/services" element={<Services />} />
       <Route path="/gallery" element={<Gallery />} />
       <Route path="/blog" element={<Blog />} />
+      <Route path="/blog/:slug" element={<BlogPost />} />
       <Route path="/where-to-buy" element={<WhereToBuy />} />
       <Route path="/contact" element={<Contact />} />
     </Routes>

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "field-preparation",
+    "src": "/images/gallery/field-preparation.jpg",
+    "alt": "Preparing field beds for planting",
+    "title": "Field Preparation",
+    "caption": "Soil beds are leveled and prepared for efficient planting."
+  },
+  {
+    "id": "seedling-nursery",
+    "src": "/images/gallery/seedling-nursery.jpg",
+    "alt": "Seedlings in nursery trays",
+    "title": "Seedling Nursery",
+    "caption": "Young plants are nurtured in controlled nursery conditions."
+  },
+  {
+    "id": "crop-maintenance",
+    "src": "/images/gallery/crop-maintenance.jpg",
+    "alt": "Team members inspecting crop rows",
+    "title": "Crop Maintenance",
+    "caption": "Routine monitoring helps maintain crop health and quality."
+  },
+  {
+    "id": "harvest-day",
+    "src": "/images/gallery/harvest-day.jpg",
+    "alt": "Fresh produce harvested from the farm",
+    "title": "Harvest Day",
+    "caption": "Produce is harvested at peak maturity for freshness."
+  },
+  {
+    "id": "produce-sorting",
+    "src": "/images/gallery/produce-sorting.jpg",
+    "alt": "Produce sorting and quality checks",
+    "title": "Produce Sorting",
+    "caption": "Each batch is sorted and checked before distribution."
+  },
+  {
+    "id": "packaging",
+    "src": "/images/gallery/distribution-packing.jpg",
+    "alt": "Packaged produce prepared for delivery",
+    "title": "Distribution Packing",
+    "caption": "Orders are packed to maintain quality through delivery."
+  },
+  {
+    "id": "market-delivery",
+    "src": "/images/gallery/market-delivery.jpg",
+    "alt": "Farm produce delivered to market partners",
+    "title": "Market Delivery",
+    "caption": "Reliable logistics connect our farms to retail partners."
+  },
+  {
+    "id": "community-outreach",
+    "src": "/images/gallery/community-outreach.jpg",
+    "alt": "Community engagement around agriculture",
+    "title": "Community Outreach",
+    "caption": "We support local growers through collaboration and knowledge sharing."
+  }
+]
