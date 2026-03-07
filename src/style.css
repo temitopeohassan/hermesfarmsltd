@@ -44,6 +44,7 @@ button,
 }
 
 .site-brand img {
+.site-brand__icon {
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -60,67 +61,6 @@ button,
 
 .main-footer .site-brand__name {
   color: var(--white-color, #fff);
-}
-
-/* Fixed header refinements on scroll. */
-header.main-header .header-sticky.active {
-  background: #ffffff !important;
-  border-bottom: 1px solid rgba(44, 44, 44, 0.12) !important;
-  border-radius: 0 !important;
-  box-shadow: 0 6px 20px rgba(18, 24, 16, 0.08);
-}
-
-header.main-header .header-sticky.active .navbar,
-header.main-header .header-sticky.active .navbar .container {
-  min-height: 75px;
-}
-
-header.main-header .header-sticky.active .navbar {
-  padding: 0 !important;
-}
-
-header.main-header .header-sticky.active .site-brand {
-  gap: 8px;
-}
-
-header.main-header .header-sticky.active .site-brand img {
-  width: 34px;
-  height: 34px;
-  padding: 5px;
-  background: rgba(44, 44, 44, 0.08);
-}
-
-header.main-header .header-sticky.active .site-brand__name {
-  color: #111111;
-  font-size: 18px;
-}
-
-header.main-header .header-sticky.active .header-btn .btn-default {
-  font-size: 14px;
-  padding: 12px 36px 12px 18px;
-}
-
-header.main-header .header-sticky.active .header-btn .btn-default::before {
-  right: 16px;
-  width: 10px;
-  height: 10px;
-}
-
-header.main-header .header-sticky.active .navbar-toggle .slicknav_btn {
-  background: #f1f3ef;
-}
-
-@media only screen and (min-width: 992px) {
-  header.main-header .header-sticky.active .main-menu ul li a {
-    color: #111111;
-    font-size: 15px;
-    padding: 8px 8px !important;
-  }
-
-  header.main-header .header-sticky.active .main-menu ul li a:hover,
-  header.main-header .header-sticky.active .main-menu ul li a:focus {
-    color: var(--accent-color, #43732e);
-  }
 }
 
 .hero-custom,
@@ -531,6 +471,113 @@ header.main-header .header-sticky.active .navbar-toggle .slicknav_btn {
   margin-bottom: 18px;
 }
 
+}
+
+.contact-us-image {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.contact-info-item .icon-box i {
+  position: relative;
+  z-index: 2;
+  color: var(--primary-color, #2c2c2c);
+  font-size: 20px;
+}
+
+.contact-info-item--simple {
+  width: 100%;
+  border-radius: 12px;
+  background: var(--secondary-color, #f8f6ef);
+  padding: 24px;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.contact-info-item--simple::before {
+  display: none;
+}
+
+.contact-info-item--simple h4 {
+  margin-bottom: 10px;
+}
+
+.contact-info-item--simple p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.soilux-address-note {
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--secondary-color, #f8f6ef);
+}
+
+.soilux-address-note h4 {
+  margin-bottom: 8px;
+}
+
+.soilux-address-note p {
+  margin: 0;
+}
+
+.contact-summary {
+  padding: 0 0 70px;
+}
+
+.where-to-buy-section {
+  padding: 100px 0;
+}
+
+.where-to-buy-card {
+  background: var(--secondary-color, #f8f6ef);
+  border-radius: 12px;
+  padding: 30px 22px;
+  text-align: center;
+  height: calc(100% - 24px);
+  margin-bottom: 24px;
+}
+
+.where-to-buy-card i {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent-color, #43732e);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color, #2c2c2c);
+  margin-bottom: 14px;
+}
+
+.where-to-buy-card h4 {
+  margin-bottom: 8px;
+}
+
+.where-to-buy-card p {
+  margin-bottom: 8px;
+}
+
+.where-to-buy-card span {
+  display: inline-block;
+  background: rgba(44, 44, 44, 0.08);
+  border-radius: 100px;
+  color: var(--primary-color, #2c2c2c);
+  font-size: 14px;
+  padding: 6px 12px;
+}
+
+.where-to-buy-cta {
+  text-align: center;
+  max-width: 680px;
+  margin: 20px auto 0;
+}
+
+.where-to-buy-cta p {
+  margin-bottom: 18px;
+}
+
 @media only screen and (max-width: 991px) {
   .site-brand__name {
     font-size: 18px;
@@ -538,6 +585,15 @@ header.main-header .header-sticky.active .navbar-toggle .slicknav_btn {
 
   .hero-box {
     padding: 190px 0 90px;
+  }
+
+  .media-placeholder--about,
+  .media-placeholder--about-page,
+  .media-placeholder--contact,
+  .media-placeholder--service {
+    min-height: 300px;
+  }
+
   }
 
   .media-placeholder--about,
