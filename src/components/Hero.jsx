@@ -1,32 +1,48 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
-    <div className="hero bg-section dark-section">
+    <div className="hero bg-section dark-section hero-custom">
       <div className="hero-box">
         <div className="container">
           <div className="row align-items-end">
-            <div className="col-xl-6">
+            <div className="col-xl-7 col-lg-8">
               <div className="hero-content">
                 <div className="section-title">
                   <h3>Healthy Farms, Healthy Lives</h3>
                   <h1>
-                    Discover the Power of Organic Farming, Grown with Love &
-                    Reliability
+                    Discover trusted farm produce grown with care, consistency,
+                    and sustainable methods
                   </h1>
                   <p>
-                    Experience the true essence of organic farming, where every
-                    crop is grown with care.
+                    Hermes Farms partners with homes, stores, and distributors to
+                    deliver nutritious food from field to table.
                   </p>
                 </div>
 
                 <div className="hero-btn">
-                  <a href="/contact" className="btn-default btn-highlighted">
-                    Visit Our Farm
-                  </a>
-                  <a href="/services" className="btn-default btn-border">
+                  <Link to="/contact" className="btn-default btn-highlighted">
+                    Contact Our Team
+                  </Link>
+                  <Link to="/services" className="btn-default btn-border">
                     View Our Services
-                  </a>
+                  </Link>
+                </div>
+
+                <div className="hero-stats">
+                  <div className="hero-stat">
+                    <strong>10+</strong>
+                    <span>Years of farming experience</span>
+                  </div>
+                  <div className="hero-stat">
+                    <strong>500+</strong>
+                    <span>Acres cultivated responsibly</span>
+                  </div>
+                  <div className="hero-stat">
+                    <strong>200+</strong>
+                    <span>Partners and buyers served</span>
+                  </div>
                 </div>
               </div>
             </div>

@@ -8,37 +8,37 @@ const products = [
     id: 1,
     name: "Fresh Tomatoes",
     category: "Vegetables",
-    image: "/images/products/product-1.jpg",
+    icon: "fa-solid fa-apple-whole"
   },
   {
     id: 2,
     name: "Organic Carrots",
     category: "Vegetables",
-    image: "/images/products/product-2.jpg",
+    icon: "fa-solid fa-carrot"
   },
   {
     id: 3,
     name: "Green Lettuce",
     category: "Leafy Greens",
-    image: "/images/products/product-3.jpg",
+    icon: "fa-solid fa-leaf"
   },
   {
     id: 4,
     name: "Sweet Corn",
     category: "Grains",
-    image: "/images/products/product-4.jpg",
+    icon: "fa-solid fa-seedling"
   },
   {
     id: 5,
     name: "Fresh Potatoes",
     category: "Root Crops",
-    image: "/images/products/product-5.jpg",
+    icon: "fa-solid fa-basket-shopping"
   },
   {
     id: 6,
     name: "Farm Eggs",
     category: "Poultry",
-    image: "/images/products/product-6.jpg",
+    icon: "fa-solid fa-egg"
   },
 ];
 
@@ -49,31 +49,31 @@ export default function Produce() {
       <PageBanner title="Our Produce" />
 
       <main className="main-content">
-        <section className="products-section">
-          <div className="container" style={{ padding: "80px 0 100px" }}>
+        <section className="page-products">
+          <div className="container">
+            <div className="section-title text-center">
+              <h3>Fresh Selection</h3>
+              <h2>Seasonal farm produce for retail and wholesale supply</h2>
+            </div>
             <div className="row">
-
               {products.map((product) => (
-                <div key={product.id} className="col-lg-4 col-md-6 mb-4">
+                <div key={product.id} className="col-lg-4 col-md-6">
                   <div className="product-item">
-                    
                     <div className="product-image">
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="img-fluid"
-                      />
+                      <div className="product-item-media">
+                        <i className={product.icon} />
+                      </div>
                     </div>
 
-                    <div className="product-content text-center mt-3">
-                      <h4>{product.name}</h4>
-                      <p>{product.category}</p>
+                    <div className="product-item-body">
+                      <div className="product-item-content">
+                        <h2>{product.name}</h2>
+                        <p>{product.category}</p>
+                      </div>
                     </div>
-
                   </div>
                 </div>
               ))}
-
             </div>
           </div>
         </section>

@@ -62,7 +62,10 @@ export default function Header() {
         <nav className="navbar navbar-expand-lg">
           <div className="container">
             <Link className="navbar-brand" to="/">
-              <img src="/images/logo.png" alt="Hermes Farms Ltd" />
+              <span className="site-brand">
+                <img src="/hermes.svg" alt="Hermes Farms Ltd" className="site-brand__icon" />
+                <span className="site-brand__name">Hermes Farms</span>
+              </span>
             </Link>
 
             <div className="navbar-toggle">
