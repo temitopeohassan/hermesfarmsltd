@@ -43,7 +43,7 @@ button,
   gap: 10px;
 }
 
-.site-brand__icon {
+.site-brand img {
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -83,7 +83,7 @@ header.main-header .header-sticky.active .site-brand {
   gap: 8px;
 }
 
-header.main-header .header-sticky.active .site-brand__icon {
+header.main-header .header-sticky.active .site-brand img {
   width: 34px;
   height: 34px;
   padding: 5px;
