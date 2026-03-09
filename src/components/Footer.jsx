@@ -13,22 +13,21 @@ export default function Footer() {
           <div className="footer-contact-info">
             <div className="footer-contact-info-content">
               <p>
-                We cultivate healthy food through sustainable farming, strong
-                community partnerships, and dependable farm-to-market supply.
+              At Hermes Farms Ltd, we are committed to delivering fresh,
+                    organic, and high-quality farm produce straight from our
+                    farms to your table. We believe healthy living starts with
+                    clean, naturally raised food, and that is exactly what we
+                    provide.
               </p>
             </div>
             <div className="footer-social-links">
               <ul>
                 <li>
-                  <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+                  <a href="https://instagram.com/hermesfarmsltd" target="_blank" rel="noreferrer" aria-label="Instagram">
                     <i className="fa-brands fa-instagram" />
                   </a>
                 </li>
-                <li>
-                  <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
-                    <i className="fa-brands fa-facebook-f" />
-                  </a>
-                </li>
+               
               </ul>
             </div>
           </div>

@@ -6,24 +6,11 @@ import Footer from "../components/Footer";
 
 const outlets = [
   {
-    name: "Lekki Farmers Market",
-    location: "Lagos",
-    type: "Retail Outlet",
-  },
-  {
-    name: "Green Harvest Grocery",
-    location: "Victoria Island",
-    type: "Grocery Partner",
-  },
-  {
-    name: "Fresh Basket Supermarket",
-    location: "Ikeja",
-    type: "Supermarket",
-  },
-  {
-    name: "Direct Farm Supply",
-    location: "Bulk Orders",
-    type: "Wholesale",
+    name: "CTTaste Hermes Farms Store",
+    location: "Order Online",
+    type: "Online Marketplace",
+    icon: "fa-solid fa-cart-shopping",
+    url: "https://cttaste.com/Hermes-farms",
   },
 ];
 
@@ -41,7 +28,8 @@ export default function WhereToBuy() {
               <h2>Find Hermes Farms produce near you</h2>
               <p>
                 Our produce is available through selected markets, grocery
-                stores, and trusted partner distributors.
+                stores, trusted partner distributors, and online ordering
+                platforms.
               </p>
             </div>
 
@@ -49,10 +37,22 @@ export default function WhereToBuy() {
               {outlets.map((outlet) => (
                 <div className="col-lg-3 col-md-6" key={outlet.name}>
                   <div className="where-to-buy-card">
-                    <i className="fa-solid fa-store" />
+                    <i className={outlet.icon} />
                     <h4>{outlet.name}</h4>
                     <p>{outlet.location}</p>
                     <span>{outlet.type}</span>
+                    {outlet.url && (
+                      <div style={{ marginTop: "18px" }}>
+                        <a
+                          href={outlet.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="btn-default"
+                        >
+                          Buy Online
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
@@ -63,6 +63,15 @@ export default function WhereToBuy() {
                 For wholesale purchases or to become a retail partner, we’d
                 love to hear from you.
               </p>
+              <a
+                href="https://cttaste.com/Hermes-farms"
+                target="_blank"
+                rel="noreferrer"
+                className="btn-default"
+                style={{ marginRight: "12px" }}
+              >
+                Order on CTTaste
+              </a>
               <Link to="/contact" className="btn-default">Contact Us</Link>
             </div>
           </div>

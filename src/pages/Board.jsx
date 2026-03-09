@@ -6,39 +6,39 @@ import Footer from "../components/Footer";
 const people = [
   {
     id: 1,
-    name: "Adewale Akinola",
+    name: "John Doe",
     role: "Chairman",
-    bio: "Adewale provides strategic leadership for Hermes Farms and brings over 20 years of experience in agriculture and agribusiness development."
+    bio: "John provides strategic leadership for Hermes Farms and brings over 20 years of experience in agriculture and agribusiness development."
   },
   {
     id: 2,
-    name: "Mary Johnson",
+    name: "John Doe",
     role: "Managing Director",
-    bio: "Mary oversees farm operations and business strategy, ensuring sustainable agricultural practices and operational excellence."
+    bio: "John oversees farm operations and business strategy, ensuring sustainable agricultural practices and operational excellence."
   },
   {
     id: 3,
-    name: "David Smith",
+    name: "John Doe",
     role: "Operations Manager",
-    bio: "David manages day-to-day farm operations, coordinating production, logistics, and workforce efficiency."
+    bio: "John manages day-to-day farm operations, coordinating production, logistics, and workforce efficiency."
   },
   {
     id: 4,
-    name: "Sarah Williams",
+    name: "John Doe",
     role: "Agronomy Lead",
-    bio: "Sarah leads crop science initiatives and ensures best practices in soil management, crop yield optimization, and sustainability."
+    bio: "John leads crop science initiatives and ensures best practices in soil management, crop yield optimization, and sustainability."
   },
   {
     id: 5,
-    name: "Michael Brown",
+    name: "John Doe",
     role: "Finance Director",
-    bio: "Michael oversees financial planning, investment strategy, and long-term growth initiatives for Hermes Farms."
+    bio: "John oversees financial planning, investment strategy, and long-term growth initiatives for Hermes Farms."
   },
   {
     id: 6,
-    name: "Linda Davis",
+    name: "John Doe",
     role: "Community Relations",
-    bio: "Linda manages partnerships with local communities, farmers, and stakeholders to support sustainable agricultural development."
+    bio: "John manages partnerships with local communities, farmers, and stakeholders to support sustainable agricultural development."
   }
 ];
 
@@ -60,13 +60,11 @@ export default function Board() {
                 <div key={person.id} className="col-lg-4 col-md-6">
                   <div className="team-item team-item--placeholder">
                     <div className="team-item-image">
-                      <div className="member-avatar" aria-hidden="true">
-                        {person.name
-                          .split(" ")
-                          .map((word) => word[0])
-                          .join("")
-                          .slice(0, 2)}
-                      </div>
+                      <img
+                        src="/images/profile.png"
+                        alt={person.name}
+                        className="member-avatar-image"
+                      />
                     </div>
                     <div className="team-item-body">
                       <div className="team-item-content">

@@ -30,20 +30,7 @@ export default function Hero() {
                   </Link>
                 </div>
 
-                <div className="hero-stats">
-                  <div className="hero-stat">
-                    <strong>10+</strong>
-                    <span>Years of farming experience</span>
-                  </div>
-                  <div className="hero-stat">
-                    <strong>500+</strong>
-                    <span>Acres cultivated responsibly</span>
-                  </div>
-                  <div className="hero-stat">
-                    <strong>200+</strong>
-                    <span>Partners and buyers served</span>
-                  </div>
-                </div>
+                
               </div>
             </div>
           </div>

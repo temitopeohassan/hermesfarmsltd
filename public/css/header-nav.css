@@ -14,6 +14,32 @@
   flex: 1;
 }
 
+header.main-header .header-sticky.active {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(44, 44, 44, 0.08);
+}
+
+header.main-header .header-sticky.active .navbar,
+header.main-header .header-sticky.active .navbar .container {
+  min-height: 90px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+header.main-header .header-sticky.active .main-menu ul li a {
+  color: #000000;
+}
+
+header.main-header .header-sticky.active .main-menu ul li a:hover,
+header.main-header .header-sticky.active .main-menu ul li a:focus {
+  color: var(--accent-color);
+}
+
+header.main-header .header-sticky.active .site-brand img {
+  width: 90px;
+  height: 90px;
+}
+
 /* Drawer close button – only visible in mobile drawer */
 .nav-drawer-close {
   display: none;
