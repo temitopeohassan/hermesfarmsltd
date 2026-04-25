@@ -1,164 +1,46 @@
-import React, { useEffect, useState } from "react";
-import { createPortal } from "react-dom";
+import React, { useState } from "react";
+import PhotoAlbum from "react-photo-album";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+
+// Lightbox plugins
+import Captions from "yet-another-react-lightbox/plugins/captions";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import Video from "yet-another-react-lightbox/plugins/video";
+import "yet-another-react-lightbox/plugins/captions.css";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
+
 import Header from "../components/Header";
 import PageBanner from "../components/PageBanner";
 import Footer from "../components/Footer";
 import galleryItems from "../data/galleryItems.json";
 
-const FALLBACK_IMAGE = "/vite.svg";
-const GALLERY_ITEMS = galleryItems;
-
 export default function Gallery() {
-  const [activeIndex, setActiveIndex] = useState(null);
-  const items = GALLERY_ITEMS;
-  const hasMultipleItems = items.length > 1;
-  const activeItem = activeIndex === null ? null : items[activeIndex];
+  const [index, setIndex] = useState(-1);
 
-  const closeLightbox = () => {
-    setActiveIndex(null);
-  };
+  // Map gallery items to PhotoAlbum format
+  const photos = galleryItems.map((item) => {
+    const isVideo = item.type === "video";
+    const thumbSrc = !isVideo ? item.src.replace("/gallery/", "/gallery/thumbs/") : item.src;
+    const fullSrc = item.src;
 
-  const openLightbox = (index) => {
-    setActiveIndex(index);
-  };
-
-  const goToIndex = (index) => {
-    setActiveIndex(index);
-  };
-
-  const showPrevious = () => {
-    setActiveIndex((previous) => (previous - 1 + items.length) % items.length);
-  };
-
-  const showNext = () => {
-    setActiveIndex((previous) => (previous + 1) % items.length);
-  };
-
-  useEffect(() => {
-    if (activeIndex === null) return undefined;
-
-    const { overflow } = document.body.style;
-    document.body.style.overflow = "hidden";
-
-    const onKeyDown = (event) => {
-      if (event.key === "Escape") closeLightbox();
-      if (event.key === "ArrowRight" && hasMultipleItems) {
-        showNext();
-      }
-      if (event.key === "ArrowLeft" && hasMultipleItems) {
-        showPrevious();
-      }
+    return {
+      src: thumbSrc, // PhotoAlbum uses this for grid
+      fullSrc: fullSrc, // Lightbox uses this for full view
+      // For videos in the filmstrip, use a fallback image or a dedicated video thumb if available
+      thumbnail: isVideo ? "/gallery/thumbs/image-1.jpg" : thumbSrc, 
+      width: 1, // Grid aspect ratio
+      height: 1,
+      realWidth: 1080, // Real dimensions for lightbox
+      realHeight: 720,
+      title: item.title,
+      description: item.caption,
+      type: item.type || "image",
+      key: item.id,
+      sources: isVideo ? [{ src: item.src, type: "video/mp4" }] : undefined,
     };
-
-    window.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.body.style.overflow = overflow;
-      window.removeEventListener("keydown", onKeyDown);
-    };
-  }, [activeIndex, hasMultipleItems, items.length]);
-
-  const onImageError = (event) => {
-    if (event.currentTarget.src.endsWith(FALLBACK_IMAGE)) return;
-    event.currentTarget.src = FALLBACK_IMAGE;
-    event.currentTarget.classList.add("gallery-image-fallback");
-  };
-
-  const lightbox = activeItem
-    ? createPortal(
-        <div
-          className="gallery-lightbox"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="gallery-lightbox-title"
-          onClick={closeLightbox}
-        >
-          <div
-            className="gallery-lightbox__content"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <button
-              type="button"
-              className="gallery-lightbox__close"
-              onClick={closeLightbox}
-              aria-label="Close gallery item"
-            >
-              ×
-            </button>
-
-            <div className="gallery-lightbox__header">
-              <p className="gallery-lightbox__eyebrow">Farm gallery</p>
-              <p className="gallery-lightbox__status">
-                {activeIndex + 1} / {items.length}
-              </p>
-            </div>
-
-            <div className="gallery-lightbox__media-frame">
-              {hasMultipleItems && (
-                <button
-                  type="button"
-                  className="gallery-lightbox__nav gallery-lightbox__nav--prev"
-                  onClick={showPrevious}
-                  aria-label="Show previous gallery image"
-                >
-                  ‹
-                </button>
-              )}
-
-              <div className="gallery-lightbox__media">
-                <img src={activeItem.src} alt={activeItem.alt} onError={onImageError} />
-              </div>
-
-              {hasMultipleItems && (
-                <button
-                  type="button"
-                  className="gallery-lightbox__nav gallery-lightbox__nav--next"
-                  onClick={showNext}
-                  aria-label="Show next gallery image"
-                >
-                  ›
-                </button>
-              )}
-            </div>
-
-            <div className="gallery-lightbox__caption">
-              <h3 id="gallery-lightbox-title">{activeItem.title}</h3>
-              <p>{activeItem.caption}</p>
-            </div>
-
-            {hasMultipleItems && (
-              <div className="gallery-lightbox__controls">
-                <button type="button" onClick={showPrevious}>
-                  Previous
-                </button>
-                <button type="button" onClick={showNext}>
-                  Next
-                </button>
-              </div>
-            )}
-
-            {hasMultipleItems && (
-              <div className="gallery-lightbox__thumbs" aria-label="Gallery thumbnails">
-                {items.map((item, index) => (
-                  <button
-                    key={item.id}
-                    type="button"
-                    className={`gallery-lightbox__thumb${
-                      index === activeIndex ? " is-active" : ""
-                    }`}
-                    onClick={() => goToIndex(index)}
-                    aria-label={`View ${item.title}`}
-                    aria-pressed={index === activeIndex}
-                  >
-                    <img src={item.src} alt={item.alt} onError={onImageError} />
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>,
-        document.body
-      )
-    : null;
+  });
 
   return (
     <>
@@ -170,43 +52,173 @@ export default function Gallery() {
             <div className="section-title text-center">
               <h3>Farm Moments</h3>
               <h2>Snapshots from our daily operations and field activities</h2>
+              <p className="mt-3">
+                Experience the beauty of agriculture through our lens. From field preparation to the final harvest.
+              </p>
             </div>
-            <div className="row page-gallery-box gallery-app-grid">
-              {items.map((item, index) => (
-                <div className="col-lg-4 col-md-6" key={item.id}>
-                  <article className="photo-gallery gallery-card">
-                    <div className="gallery-card__media">
-                      <button
-                        type="button"
-                        className="gallery-card__trigger"
-                        onClick={() => openLightbox(index)}
-                        aria-label={`Open ${item.title} in gallery modal`}
-                      >
-                        <img
-                          src={item.src}
-                          alt={item.alt}
-                          loading="lazy"
-                          onError={onImageError}
-                        />
-                        <span className="gallery-card__index">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
-                        <span className="gallery-card__overlay">Open gallery</span>
-                      </button>
+
+            <div className="gallery-wrapper" style={{ padding: "40px 0" }}>
+              <PhotoAlbum
+                layout="rows" // Rows with fixed height + square width = uniform
+                photos={photos}
+                targetRowHeight={300}
+                spacing={20}
+                padding={0}
+                onClick={({ index }) => setIndex(index)}
+                renderPhoto={({ photo, wrapperStyle }) => {
+                  return (
+                    <div 
+                      style={{ ...wrapperStyle, cursor: "pointer", borderRadius: "16px", overflow: "hidden" }}
+                      className="gallery-item-hover"
+                    >
+                      <div style={{ position: "relative", width: "100%", height: "100%" }}>
+                        {photo.type === "video" ? (
+                          <video 
+                            src={photo.src} 
+                            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                            muted
+                            playsInline
+                          />
+                        ) : (
+                          <img 
+                            src={photo.src} // Now uses the thumbnail (thumbSrc)
+                            alt={photo.title}
+                            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                          />
+                        )}
+                        
+                        {photo.type === "video" && (
+                          <div className="video-icon-overlay">
+                            <i className="fa-solid fa-play"></i>
+                          </div>
+                        )}
+                        
+                        <div className="gallery-overlay">
+                          <h4>{photo.title}</h4>
+                          <p>{photo.type === "video" ? "Video" : "Photo"}</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="gallery-card__caption">
-                      <h3>{item.title}</h3>
-                      <p>{item.caption}</p>
-                    </div>
-                  </article>
-                </div>
-              ))}
+                  );
+                }}
+              />
             </div>
           </div>
         </section>
       </main>
+
+      <Lightbox
+        slides={photos.map((p) => ({
+          ...p,
+          src: p.fullSrc, // Lightbox uses full resolution
+          width: p.realWidth, // Use 1080 instead of 1 to fix visibility
+          height: p.realHeight,
+        }))}
+        open={index >= 0}
+        index={index}
+        close={() => setIndex(-1)}
+        plugins={[Captions, Thumbnails, Zoom, Video]}
+        captions={{ showTextUnderlay: true }}
+      />
+
       <Footer />
-      {lightbox}
+
+      <style>{`
+        /* Force PhotoAlbum into flex layout for columns */
+        .react-photo-album {
+          display: flex !important;
+          flex-direction: row !important;
+          flex-wrap: nowrap !important;
+          justify-content: space-between !important;
+        }
+        .react-photo-album--column {
+          flex: 1 !important;
+          min-width: 0 !important;
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 20px !important;
+        }
+
+        .gallery-item-hover {
+          position: relative;
+          box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+          transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .gallery-item-hover:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+        
+        .gallery-item-hover .gallery-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 70%);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-end;
+          padding-bottom: 25px;
+          opacity: 0;
+          transition: opacity 0.4s ease;
+          pointer-events: none;
+          z-index: 2;
+        }
+        .gallery-item-hover:hover .gallery-overlay {
+          opacity: 1;
+        }
+        .gallery-overlay h4 {
+          color: #fff;
+          margin: 0;
+          font-size: 1.1rem;
+          font-weight: 700;
+          transform: translateY(15px);
+          transition: transform 0.4s ease;
+        }
+        .gallery-overlay p {
+          color: rgba(255,255,255,0.8);
+          font-size: 0.75rem;
+          margin: 6px 0 0;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          transform: translateY(15px);
+          transition: transform 0.4s ease 0.1s;
+        }
+        .gallery-item-hover:hover .gallery-overlay h4,
+        .gallery-item-hover:hover .gallery-overlay p {
+          transform: translateY(0);
+        }
+
+        .video-icon-overlay {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(0,0,0,0.15);
+          color: #fff;
+          font-size: 2.5rem;
+          transition: background 0.3s ease;
+          z-index: 1;
+        }
+        .gallery-item-hover:hover .video-icon-overlay {
+          background: rgba(0,0,0,0.3);
+        }
+
+        .react-photo-album--photo {
+          transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) !important;
+          border-radius: inherit;
+        }
+        .gallery-item-hover:hover .react-photo-album--photo {
+          transform: scale(1.08);
+        }
+        
+        @media (max-width: 768px) {
+          .react-photo-album {
+            gap: 15px !important;
+          }
+          .gallery-overlay h4 { font-size: 1rem; }
+        }
+      `}</style>
     </>
   );
 }

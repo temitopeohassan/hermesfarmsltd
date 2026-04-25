@@ -1,58 +1,74 @@
 [
   {
     "id": "field-preparation",
-    "src": "/images/gallery/image-1.jpg",
+    "src": "/gallery/image-1.jpg",
     "alt": "Preparing field beds for planting",
     "title": "Field Preparation",
     "caption": "Soil beds are leveled and prepared for efficient planting."
   },
   {
     "id": "seedling-nursery",
-    "src": "/images/gallery/image-2.jpg",
+    "src": "/gallery/image-2.jpg",
     "alt": "Seedlings in nursery trays",
     "title": "Seedling Nursery",
     "caption": "Young plants are nurtured in controlled nursery conditions."
   },
   {
     "id": "crop-maintenance",
-    "src": "/images/gallery/image-3.jpg",
+    "src": "/gallery/image-3.jpg",
     "alt": "Team members inspecting crop rows",
     "title": "Crop Maintenance",
     "caption": "Routine monitoring helps maintain crop health and quality."
   },
   {
     "id": "harvest-day",
-    "src": "/images/gallery/image-4.jpg",
+    "src": "/gallery/image-4.jpg",
     "alt": "Fresh produce harvested from the farm",
     "title": "Harvest Day",
     "caption": "Produce is harvested at peak maturity for freshness."
   },
   {
     "id": "produce-sorting",
-    "src": "/images/gallery/image-2.jpg",
+    "src": "/gallery/image-5.jpg",
     "alt": "Produce sorting and quality checks",
     "title": "Produce Sorting",
     "caption": "Each batch is sorted and checked before distribution."
   },
   {
     "id": "packaging",
-    "src": "/images/gallery/image-1.jpg",
+    "src": "/gallery/image-6.jpg",
     "alt": "Packaged produce prepared for delivery",
     "title": "Distribution Packing",
     "caption": "Orders are packed to maintain quality through delivery."
   },
   {
     "id": "market-delivery",
-    "src": "/images/gallery/image-4.jpg",
+    "src": "/gallery/image-7.jpg",
     "alt": "Farm produce delivered to market partners",
     "title": "Market Delivery",
     "caption": "Reliable logistics connect our farms to retail partners."
   },
   {
     "id": "community-outreach",
-    "src": "/images/gallery/image-3.jpg",
+    "src": "/gallery/image-8.jpg",
     "alt": "Community engagement around agriculture",
     "title": "Community Outreach",
     "caption": "We support local growers through collaboration and knowledge sharing."
+  },
+  {
+    "id": "farm-life-video-1",
+    "src": "/gallery/video-1.mp4",
+    "alt": "Farm life video 1",
+    "title": "Farm Life 1",
+    "caption": "Life on the farm is never dull, with something happening every day.",
+    "type": "video"
+  },
+  {
+    "id": "farm-life-video-2",
+    "src": "/gallery/video-2.mp4",
+    "alt": "Farm life video 2",
+    "title": "Farm Life 2",
+    "caption": "Life on the farm is never dull, with something happening every day.",
+    "type": "video"
   }
 ]
